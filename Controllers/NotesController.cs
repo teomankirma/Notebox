@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +26,7 @@ namespace Notebox.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.Note != null ? 
-                          View(await _context.Note.ToListAsync()) :
+                          View(await _context.Note.Where(i => i.UserId.Contains(User.FindFirst(ClaimTypes.NameIdentifier).Value)).ToListAsync()) :
                           Problem("Entity set 'ApplicationDbContext.Note'  is null.");
         }
 
@@ -39,7 +40,7 @@ namespace Notebox.Controllers
         public async Task<IActionResult> ShowSearchResults(String SearchTerm)
         {
             return _context.Note != null ?
-                        View("Index", await _context.Note.Where( i => i.NoteTitle.Contains(SearchTerm)).ToListAsync()) :
+                        View("Index", await _context.Note.Where( i => i.NoteTitle.Contains(SearchTerm) && i.UserId.Contains(User.FindFirst(ClaimTypes.NameIdentifier).Value)).ToListAsync()) :
                         Problem("Entity set 'ApplicationDbContext.Note'  is null.");
         }
 

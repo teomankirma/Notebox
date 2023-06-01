@@ -1,4 +1,5 @@
 ﻿@model Notebox.Models.Note
+@using System.Security.Claims
 
 @{
     ViewData["Title"] = "Create";
@@ -14,7 +15,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="UserId" class="control-label"></label>
-                <input asp-for="UserId" class="form-control" />
+                <input asp-for="UserId" class="form-control" value="@User.FindFirst(ClaimTypes.NameIdentifier)?.Value" readonly />
                 <span asp-validation-for="UserId" class="text-danger"></span>
             </div>
             <div class="form-group">
