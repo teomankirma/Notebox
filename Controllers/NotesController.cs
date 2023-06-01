@@ -27,6 +27,20 @@ namespace Notebox.Controllers
                           Problem("Entity set 'ApplicationDbContext.Note'  is null.");
         }
 
+        // GET: Notes/ShowSearchForm
+        public async Task<IActionResult> ShowSearchForm()
+        {
+            return View();
+        }
+
+        // GET: Notes/ShowSearchResults
+        public async Task<IActionResult> ShowSearchResults(String SearchTerm)
+        {
+            return _context.Note != null ?
+                        View("Index", await _context.Note.Where( i => i.NoteTitle.Contains(SearchTerm)).ToListAsync()) :
+                        Problem("Entity set 'ApplicationDbContext.Note'  is null.");
+        }
+
         // GET: Notes/Details/5
         public async Task<IActionResult> Details(int? id)
         {

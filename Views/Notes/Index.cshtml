@@ -18,9 +18,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.NoteTitle)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NoteContent)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -32,9 +29,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NoteTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoteContent)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
