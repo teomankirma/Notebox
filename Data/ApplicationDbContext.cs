@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Notebox.Models;
 
 namespace Notebox.Data
 {
@@ -9,5 +10,6 @@ namespace Notebox.Data
             : base(options)
         {
         }
+        public DbSet<Notebox.Models.Note>? Note { get; set; }
     }
 }
