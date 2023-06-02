@@ -31,6 +31,7 @@ namespace Notebox.Controllers
         }
 
         // GET: Notes/ShowSearchForm
+        [Authorize]
         public async Task<IActionResult> ShowSearchForm()
         {
             return View();
