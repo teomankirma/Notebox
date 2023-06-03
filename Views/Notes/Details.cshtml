@@ -7,7 +7,6 @@
 <h1>Details</h1>
 
 <div>
-    <h4>Note</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -31,6 +30,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id"><i class="fa-solid fa-pen-to-square fa-bounce text-success"></i></a> |
+    <a class="text-black" asp-action="Index" style="text-decoration:none;"><i class="fa-solid fa-arrow-left "></i> Go Back</a>
 </div>
