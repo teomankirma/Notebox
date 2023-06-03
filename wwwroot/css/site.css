@@ -17,7 +17,11 @@ body {
   margin-bottom: 60px;
 }
 
-.welcome-text {
+.welcome-screen {
     padding-top: 20%;
+}
+
+.hidden {
+    display: none;
 }
 

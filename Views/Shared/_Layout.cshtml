@@ -40,25 +40,25 @@
             @RenderBody()
         </main>
     </div>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/38a6783db2.js" crossorigin="anonymous"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
-
     <footer class="text-center fixed-bottom pt-3 pb-1 bg-dark text-white" ng-app="notebox" ng-controller="noteboxController">
         <p>Current Day and Time: {{ CurrentDate | date:'dd/MM/yyyy HH:mm:ss'}}</p>
 
         <script>
             var app = angular.module('notebox', []);
-            app.controller('noteboxController', ['$scope', '$http', '$interval',function ($scope, $http, $interval) {
+            app.controller('noteboxController', ['$scope', '$http', '$interval', function ($scope, $http, $interval) {
                 $interval(function () {
                     $scope.CurrentDate = new Date();
                 }, 1000);
-                
+
             }]);
         </script>
 
     </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/38a6783db2.js" crossorigin="anonymous"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

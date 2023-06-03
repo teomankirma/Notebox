@@ -3,39 +3,38 @@
 @{
     ViewData["Title"] = "Index";
 }
+<div class="notes hidden">
+    <h1>My Notes</h1>
+    <p><a style="text-decoration:none;" asp-action="Create">Create New</a></p>
 
-<h1>My Notes</h1>
-
-<p>
-    <a style="text-decoration:none;" asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UserId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NoteTitle)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoteTitle)
-            </td>
-            <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square fa-bounce text-success"></i></a> |
-                    <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info fa-bounce text-primary"></i></a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash fa-bounce text-danger"></i></a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NoteTitle)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoteTitle)
+                </td>
+                <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square fa-bounce text-success"></i></a> |
+                        <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info fa-bounce text-primary"></i></a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash fa-bounce text-danger"></i></a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>
