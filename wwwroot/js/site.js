@@ -19,3 +19,11 @@ $(document).ready(function () {
     $(".register-confirmation").fadeIn(1500).removeClass("hidden");
 });
 
+// AngularJS for current date and time
+var app = angular.module('notebox', []);
+app.controller('noteboxController', ['$scope', '$http', '$interval', function ($scope, $http, $interval) {
+    $interval(function () {
+        $scope.CurrentDate = new Date();
+    }, 1000);
+
+}]);

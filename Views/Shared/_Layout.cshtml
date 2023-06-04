@@ -42,17 +42,6 @@
     </div>
     <footer class="text-center fixed-bottom pt-3 pb-1 bg-dark text-white" ng-app="notebox" ng-controller="noteboxController">
         <p>Current Day and Time: {{ CurrentDate | date:'dd/MM/yyyy HH:mm:ss'}}</p>
-
-        <script>
-            var app = angular.module('notebox', []);
-            app.controller('noteboxController', ['$scope', '$http', '$interval', function ($scope, $http, $interval) {
-                $interval(function () {
-                    $scope.CurrentDate = new Date();
-                }, 1000);
-
-            }]);
-        </script>
-
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
