@@ -46,6 +46,7 @@ namespace Notebox.Controllers
         }
 
         // GET: Notes/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Note == null)

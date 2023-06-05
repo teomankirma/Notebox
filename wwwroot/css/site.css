@@ -17,7 +17,11 @@ body {
   margin-bottom: 60px;
 }
 
-.welcome-text {
-    padding-top: 20%;
+.welcome-screen {
+    padding-top: 17%;
+}
+
+.hidden {
+    display: none;
 }
 

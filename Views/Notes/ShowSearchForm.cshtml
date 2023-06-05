@@ -1,6 +1,10 @@
-﻿<h4>Search for a Note</h4>
-<hr />
-<div class="row">
+﻿@{
+    ViewData["Title"] = "Search";
+}
+
+<div class="row search hidden">
+    <h4>Search for a Note</h4>
+    <hr />
     <div class="col-lg-4">
         <form asp-action="ShowSearchResults">
             <div class="form-group pb-4">
@@ -12,8 +16,7 @@
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a class="text-black" asp-action="Index" style="text-decoration:none;"><i class="fa-solid fa-arrow-left "></i> Go Back</a>
+    <div>
+        <a class="text-black" asp-action="Index" style="text-decoration:none;"><i class="fa-solid fa-arrow-left "></i> Go Back</a>
+    </div>
 </div>

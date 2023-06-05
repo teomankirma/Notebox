@@ -4,9 +4,9 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
 
-<div>
+<div class="details hidden">
+    <h1>Details</h1>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -28,8 +28,9 @@
             @Html.DisplayFor(model => model.NoteContent)
         </dd>
     </dl>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.Id"><i class="fa-solid fa-pen-to-square fa-bounce text-success"></i></a> |
+        <a class="text-black" asp-action="Index" style="text-decoration:none;"><i class="fa-solid fa-arrow-left "></i> Go Back</a>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id"><i class="fa-solid fa-pen-to-square fa-bounce text-success"></i></a> |
-    <a class="text-black" asp-action="Index" style="text-decoration:none;"><i class="fa-solid fa-arrow-left "></i> Go Back</a>
-</div>
+

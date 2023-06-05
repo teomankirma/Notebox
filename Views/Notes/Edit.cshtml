@@ -4,9 +4,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
-<hr />
-<div class="row">
+<div class="row edit hidden">
+    <h1>Edit</h1>
+    <hr />
     <div class="col-lg-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -31,11 +31,12 @@
             </div>
         </form>
     </div>
+    <div>
+        <a class="text-black" asp-action="Index" style="text-decoration:none;"><i class="fa-solid fa-arrow-left "></i> Go Back</a>
+    </div>
 </div>
 
-<div>
-    <a class="text-black" asp-action="Index" style="text-decoration:none;"><i class="fa-solid fa-arrow-left "></i> Go Back</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
