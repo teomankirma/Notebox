@@ -17,11 +17,98 @@ body {
   margin-bottom: 60px;
 }
 
-.welcome-screen {
-    padding-top: 17%;
-}
-
 .hidden {
     display: none;
 }
 
+.welcome-text {
+    padding: 5% 0;
+}
+
+.card {
+    width: 18rem;
+}
+
+.logo {
+    width: 200px;
+    height: 150px;
+    border-radius: 25px;
+}
+
+.nav-link-navbar {
+    color: #FFDC00 !important;
+}
+
+.navbar-toggler, .navbar-toggler-icon {
+    background-color: #FFDC00 !important;
+    color: #FFDC00 !important;
+}
+
+.table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.card-create {
+    height: 470px;
+    width: 700px;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 20px;
+    font-family: Arial, sans-serif;
+}
+
+dt, dd {
+    padding: 10px;
+    border-radius: 4px;
+}
+
+dt {
+    font-weight: bold;
+    color: #FFDC00;
+    background-color: #6E0C7C;
+}
+
+dd {
+    margin: 0;
+    color: #333;
+    background-color: #F3F3F3;
+}
+
+.card-edit {
+    height: 470px;
+    width: 700px;
+}
+
+.card-search {
+    height: 300px;
+    width: 400px;
+}
